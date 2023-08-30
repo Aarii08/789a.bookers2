@@ -17,6 +17,8 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   # 追記
   has_many :rooms, through: :entries
+  # 閲覧数カウント用
+  has_many :read_counts, dependent: :destroy
 
 
   has_one_attached :profile_image
