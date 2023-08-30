@@ -28,6 +28,14 @@
             <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-success" %>
           <% end %>
         <% end %></th>
+
+    <th>
+       <% if current_user != user && current_user.following?(user) && user.following?(current_user) %>
+        <%= link_to 'chatを始める', room_path(roomId), class: "btn btn-outline-info ml-3" %>
+      <% end %>
+
+
+    </th>
   </tr>
 </table>
 

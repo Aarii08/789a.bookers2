@@ -15,6 +15,8 @@ class User < ApplicationRecord
   # DM機能
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  # 追記
+  has_many :rooms, through: :entries
 
 
   has_one_attached :profile_image
